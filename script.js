@@ -3,19 +3,22 @@ const http = require('http');
 const pug = require('pug');
 
 
-const port = process.argv[2]
-const filename = process.argv[3];
+// const port = process.argv[2]
+// const filename = process.argv[3];
 
 
-if (!port) {
-    console.error('Please provide a port number')
-    process.exit(1);
-}
+// if (!port) {
+//     console.error('Please provide a port number')
+//     process.exit(1);
+// }
 
-if (!filename) {
-    console.error('Please provide a filename');
-    process.exit(1);
-}
+// if (!filename) {
+//     console.error('Please provide a filename');
+//     process.exit(1);
+// }
+
+const port = 8080;
+const filename = 'data.json'
 
 const compiledFunction = pug.compileFile('template.pug');
 
