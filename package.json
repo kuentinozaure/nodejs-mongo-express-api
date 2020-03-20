@@ -4,6 +4,7 @@
   "description": "mini tp de lecture de fichier",
   "main": "script.js",
   "scripts": {
+    "start": "node script.js 3000 data.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/kuentinozaure/nodejs-mongo-express-api/issues"
   },
-  "homepage": "https://github.com/kuentinozaure/nodejs-mongo-express-api#readme"
+  "homepage": "https://github.com/kuentinozaure/nodejs-mongo-express-api#readme",
+  "dependencies": {
+    "pug": "^2.0.4"
+  }
 }
