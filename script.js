@@ -17,7 +17,7 @@ const pug = require('pug');
 //     process.exit(1);
 // }
 
-const port = 8080;
+const port = 5000;
 const filename = 'data.json'
 
 const compiledFunction = pug.compileFile('template.pug');
@@ -45,8 +45,8 @@ const server = http.createServer(
     }
 );
 
-server.listen(process.env.port || port, () => {
-    console.log(`➡️  your server is running on port ${port}`)
+server.listen(process.env.port || port,'0.0.0.0', () => {
+    console.log(`➡️  your server is running on port ${port || process.env.port}`)
 })
 
 
