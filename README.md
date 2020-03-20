@@ -1,2 +1,7 @@
 # nodejs-mongo-express-api
-repo github du coup de web M1
+
+# How to launch it 
+```bash
+npm install # install dependencies
+npm start # run node server
+```

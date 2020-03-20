@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-mongo-express-api",
+  "version": "1.0.0",
+  "description": "mini tp de lecture de fichier",
+  "main": "script.js",
+  "scripts": {
+    "start": "node script.js 3000 data.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuentinozaure/nodejs-mongo-express-api.git"
+  },
+  "author": "lil_kent1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuentinozaure/nodejs-mongo-express-api/issues"
+  },
+  "homepage": "https://github.com/kuentinozaure/nodejs-mongo-express-api#readme",
+  "dependencies": {
+    "pug": "^2.0.4"
+  }
+}

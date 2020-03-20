@@ -1,0 +1,25 @@
+doctype html
+html
+    head
+        title Node server :)
+        style 
+            include style.css
+    body
+        div(class="table-title")
+            h3 Voici le contenu de votre fichier :
+
+            table(class="table-fill")
+                thead
+                    tr
+                        th(class="text-left")
+                            | Identifiant
+                        th(class="text-left")
+                            | Ville
+                tbody(class="table-hover")
+                    each n in utilisateurs
+                       tr  
+                            td(class="text-left")
+                                | #{n.town}
+                                
+                            td(class="text-left")
+                                | #{n.name}
