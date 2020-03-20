@@ -45,7 +45,7 @@ const server = http.createServer(
     }
 );
 
-server.listen(port, () => {
+server.listen(process.env.port || port, () => {
     console.log(`➡️  your server is running on port ${port}`)
 })
 
