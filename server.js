@@ -25,6 +25,7 @@ const compiledFunctionExpress = pug.compileFile("EXPRESS_SERVER/template.pug");
 
 app.use(express.static(path.join(__dirname, "assets")));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.get("/", function(req, res) {
   fs.readFile(filename, "utf8", (err, data) => {
@@ -128,7 +129,7 @@ app.put("/city/:id", function(req, res) {
 
       const getValueFromParam = req.params.id;
       const getValueFromBody = req.body.name;
-      
+
       datasFromFile.cities.filter(x => {
         if (getValueFromParam === x.id) {
           x.name = getValueFromBody;
