@@ -78,7 +78,7 @@ app.post('/city', function (req, res) {
 
       datasFromFile.cities.push({id:uuidv4(), name:getValueFromBody})
 
-      fs.writeFile('cities.json',datasFromFile, function (err) {
+      fs.writeFile('cities.json',JSON.stringify(datasFromFile), function (err) {
         if (err) { // file cannot create
           res.status(404).send(err);
         } else { // file has been created
