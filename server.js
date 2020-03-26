@@ -4,7 +4,8 @@ const fs = require('fs');
 const pug = require('pug');
 const path = require('path');
 const bodyParser = require('body-parser');
-const uuidv4 = require('uuid/v7');
+const { v4: uuidv4 } = require('uuid');
+
 
 const port = process.env.PORT || process.argv[2];
 const filename = process.argv[3];
