@@ -4,7 +4,7 @@ const fs = require('fs');
 const pug = require('pug');
 const path = require('path');
 const bodyParser = require('body-parser');
-const uuidv4 = require('uuid/v4');
+const uuidv4 = require('uuid/v7');
 
 const port = process.env.PORT || process.argv[2];
 const filename = process.argv[3];
@@ -93,7 +93,7 @@ app.post('/city', function (req, res) {
 
 
 
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log(`➡️  Your server is running on port ${port}`)
   console.log(`➡️  Your data source is ${filename}`)
 })
