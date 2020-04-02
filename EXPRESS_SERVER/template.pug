@@ -6,7 +6,6 @@ html
             include style.css
     body
         div(class="table-title")
-            h3 Voici le contenu de votre fichier `cities.json`:
 
             table(class="table-fill")
                 thead
@@ -16,10 +15,11 @@ html
                         th(class="text-left")
                             | Ville
                 tbody(class="table-hover")
-                    each n in towns.cities
-                       tr  
-                            td(class="text-left")
-                                | #{n.id}
+                    each n in towns
+                       tr
+                        td(class="text-left")
+                            | #{n.id}
                                 
-                            td(class="text-left")
-                                | #{n.name}
+                        td(class="text-left")
+                            | #{n.name}
+                            //-    ((click)='()')
