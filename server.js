@@ -5,9 +5,9 @@ const pug = require("pug");
 const path = require("path");
 const bodyParser = require("body-parser");
 const { v4: uuidv4 } = require("uuid");
-
+// mongodb://localhost/TP_Web
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/TP_Web",{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+mongoose.connect("mongodb+srv://tpweb:tpweb@cluster0-xya4n.mongodb.net/TP_Web",{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 const db = mongoose.connection;
 
 const citiesSchema = new mongoose.Schema({
@@ -38,6 +38,8 @@ if (!filename) {
 const compiledFunction = pug.compileFile("NODE_SERVER/template.pug");
 const compiledFunctionExpress = pug.compileFile("EXPRESS_SERVER/template.pug");
 const compiledFunctionADDCITY = pug.compileFile("EXPRESS_SERVER/addcity.pug");
+const compiledFunctionUpdateCITY = pug.compileFile("EXPRESS_SERVER/updatecity.pug");
+const compiledFunctiondeletecity = pug.compileFile("EXPRESS_SERVER/deletecity.pug");
 
 app.use(express.static(path.join(__dirname, "assets")));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -58,10 +60,22 @@ app.get("/", function(req, res) {
 
 });
 
-app.get("/adduser", function(req, res) {
+app.get("/addcity", function(req, res) {
   const generatedTemplate = compiledFunctionADDCITY({
   });
   res.send(generatedTemplate);
+});
+
+app.get("/updatecity", function(req, res) {
+  const generatedTemplate = compiledFunctionUpdateCITY({
+  });
+  res.send(generatedTemplate);
+});
+
+app.get("/deletecity", function(req, res) {
+  const generatedTemplate = compiledFunctiondeletecity({
+  });
+  res.send(generatedTemplate)
 });
 
 app.get("/cities", function(req, res) {
