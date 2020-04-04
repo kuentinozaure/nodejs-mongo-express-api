@@ -1,0 +1,32 @@
+doctype html
+html
+    head
+        title Node server :)
+        style 
+            include addcity.css
+    body
+        .login-page
+            .form
+                form.register-form
+                input(type='text', placeholder='id' name='id' id='id')
+                button( onClick="deleteCity()") Delete city →
+
+    script.
+        function deleteCity(){
+            const cityId = document.getElementById('id').value;
+          
+            if(cityId !== ""){
+                
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                     if (this.readyState == 4 && this.status == 200) {
+                        console.log(this.responseText);
+                    }
+                };
+                xhttp.open("DELETE", "/city/"+ cityId, true);
+                xhttp.setRequestHeader("Content-Type", "application/json");
+                xhttp.send();
+                //- xhttp.send(JSON.stringify({name: newName}));
+            }
+
+        }

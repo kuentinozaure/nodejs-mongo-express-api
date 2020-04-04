@@ -6,7 +6,6 @@ html
             include style.css
     body
         div(class="table-title")
-            h3 Voici le contenu de votre fichier `cities.json`:
 
             table(class="table-fill")
                 thead
@@ -16,10 +15,31 @@ html
                         th(class="text-left")
                             | Ville
                 tbody(class="table-hover")
-                    each n in towns.cities
-                       tr  
-                            td(class="text-left")
-                                | #{n.id}
+                    each n in towns
+                       tr
+                        td(class="text-left" id="inputId")
+                            | #{n._id}
                                 
-                            td(class="text-left")
-                                | #{n.name}
+                        td(class="text-left" )
+                            | #{n.name}
+            
+    script.
+        function updateTownName(id, name){
+            const cityId = id;
+            const newName = name
+            
+            
+            if(cityId !== ""){
+                
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                     if (this.readyState == 4 && this.status == 200) {
+                        console.log(this.responseText);
+                    }
+                };
+                xhttp.open("PUT", "/city/"+ cityId, true);
+                xhttp.setRequestHeader("Content-Type", "application/json");
+                xhttp.send(JSON.stringify({name: newName}));
+            }
+
+        }

@@ -1,0 +1,14 @@
+doctype html
+html
+    head
+        title Node server :)
+        style 
+            include addcity.css
+    body
+        .login-page
+        form(method='POST' action='/city')
+            .form
+                form.register-form
+                input(type='text', placeholder='city' name='name')
+                button(type='submit') Add new city →
+            
